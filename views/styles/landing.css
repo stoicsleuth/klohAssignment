@@ -77,8 +77,12 @@ p{
     .banner{
         flex-direction: column;
     }
+    .details{
+        flex-direction: column;
+    }
     .desc{
         margin-right:auto;
+        max-width: initial;
     }
 
     .user{
@@ -87,4 +91,5 @@ p{
     justify-content: center;
     align-items: center;
     }
+
 }
