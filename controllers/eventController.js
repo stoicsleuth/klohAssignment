@@ -41,7 +41,7 @@ exports.showEvent = (req, res) => {
         function(error, response, body) {
             let event = response.body.response;
             res.render('eventLanding', {
-                Title: `Join ${event.title}`,
+                title: `Join ${event.title}`,
                 event
             });
 
