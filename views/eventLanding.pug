@@ -17,7 +17,7 @@ html
     -let description = event.description.replace(/[\r\n]/g, '<br/>;');
     -description = description.replace(/;/g, '');
     -let summary=event.summary;
-    -let amount=event.amount/100;
+    -let amount='₹'+event.amount/100;
     -let owner=event.ownerName;
     -let ownerImageUrl=event.ownerProfileImageUrl;
     .header
