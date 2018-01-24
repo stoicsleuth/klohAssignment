@@ -1,0 +1,176 @@
+body{
+    /* background-color: #edeef0; */
+    font-family: "Opens Sans", "Roboto", Helvetica, Arial, sans-serif;
+    background-color: #ffffff;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80' width='80' height='80'%3E%3Cpath fill='%23bdbfa5' fill-opacity='0.4' d='M14 16H9v-2h5V9.87a4 4 0 1 1 2 0V14h5v2h-5v15.95A10 10 0 0 0 23.66 27l-3.46-2 8.2-2.2-2.9 5a12 12 0 0 1-21 0l-2.89-5 8.2 2.2-3.47 2A10 10 0 0 0 14 31.95V16zm40 40h-5v-2h5v-4.13a4 4 0 1 1 2 0V54h5v2h-5v15.95A10 10 0 0 0 63.66 67l-3.47-2 8.2-2.2-2.88 5a12 12 0 0 1-21.02 0l-2.88-5 8.2 2.2-3.47 2A10 10 0 0 0 54 71.95V56zm-39 6a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm40-40a2 2 0 1 1 0-4 2 2 0 0 1 0 4zM15 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm40 40a2 2 0 1 0 0-4 2 2 0 0 0 0 4z'%3E%3C/path%3E%3C/svg%3E")
+}
+
+.header{
+    font-family: 'Exo', sans-serif;
+    display: flex;
+    font-size: 1.8rem;
+    justify-content: center;
+    padding: 10px 10%;
+}
+.wrapper{
+    padding: 10px 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+  .card {
+    overflow: hidden;
+    width: 80%;
+    height: 80vw;
+    margin: 5%;
+    float: left;
+    display: block;
+    position: relative;
+    background-color: #fff;
+    transition: box-shadow 300ms ease-in;
+  }
+  @media (min-width: 768px) and (max-width: 1149px) {
+    .card {
+      width: calc((100vw - 365px) / 2);
+      height: calc((100vw - 365px) / 2);
+      margin: 10px 20px 10px 0;
+    }
+    .card:nth-child(2n+2) {
+      margin-right: 0;
+    }
+  }
+  @media (min-width: 1150px) {
+    .card {
+      border-radius: 10px;
+      box-shadow: black;
+      width: calc((100vw - 385px) / 3);
+      height: calc((100vw - 385px) / 3);
+      /* margin: 10px 20px 10px 0; */
+    }
+  }
+  .card:hover {
+    box-shadow: 1px 1px 8px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  .img--container {
+    position: absolute;
+    height: 73%;
+    width: 100%;
+    top: 0;
+    overflow: hidden;
+  }
+  .img--container img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  .img--container p{
+    z-index: 500;
+    position: absolute;
+    top: 0;
+    right: 15px;
+    background: linear-gradient(to right, #da4453, #89216b);
+    padding: 12px 32px;
+    color: white;
+    border-radius: 22px;
+  }
+  .card--text {
+    background: linear-gradient(to right, #da4453, #89216b);
+    color: white;
+    bottom: 0;
+    width: 100%;
+    height: 27%;
+    position: absolute;
+    /* background-color: #fff; */
+    transition: all 450ms cubic-bezier(0.6, 0.06, 0.34, 0.61);
+    transition: all 0.3s cubic-bezier(0.17, 0.71, 0.32, 0.96);
+  }
+  .card:hover .card--text {
+    height: 100%;
+    overflow: auto;
+  }
+  
+  .text--header {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    top: 6%;
+    transition: top 450ms cubic-bezier(0.6, 0.06, 0.34, 0.61);
+  }
+  .card:hover .text--header {
+    top: 10%;
+  }
+  .text--title {
+    font-size: 1.15em;
+    margin-bottom: .5em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    left: 20px;
+    right: 20px;
+    top: 15%;
+  }
+  .text--subtitle {
+    position: relative;
+    left: 20px;
+    right: 20px;
+    top: 46%;
+  }
+  .text--details {
+    /* background-color: #ed1c40; */
+    position: absolute;
+    left: 40px;
+    right: 40px;
+    top: 89%;
+    transition: top 450ms cubic-bezier(0.6, 0.06, 0.34, 0.61), opacity 500ms 100ms cubic-bezier(0.6, 0.06, 0.34, 0.61);
+    transition: all 550ms cubic-bezier(0.17, 0.71, 0.32, 0.96);
+    opacity: 0;
+    padding-bottom: 20px;
+  }
+
+  .text--details img{
+      height: 50px;
+      width: 50px;
+      display: block;
+  }
+  .card:hover .text--details {
+    top: 35%;
+    opacity: 1;
+  }
+  .text--details:before {
+    content: "";
+    display: block;
+    width: 30%;
+    height: 1px;
+    background-color: #ddd;
+    margin: 16px 0;
+  }
+  .text--description {
+    line-height: 1.4em;
+  }
+  .text--link {
+    transition: all 0.5s;
+    text-decoration: none;
+    margin-top: 1em;
+    display: inline-block;
+    color: white;
+  }
+  .text--link:hover {
+    color: #d8a8c6;
+    font-size: 1.1em;
+    transition: all 0.5s;
+  }
+  
+  .join-button{
+    z-index: 500;
+    background: white;
+    padding: 12px 58px;
+    color: crimson;
+    border-radius: 22px;
+  }
+
+  .a-parent{
+      text-align: center;
+  }

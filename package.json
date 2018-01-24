@@ -1,0 +1,22 @@
+{
+  "name": "assignment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "npm start"
+  },
+  "engines": {
+    "node": "8.0.0"
+  },
+  "dependencies": {
+    "body-parser": "1.17.1",
+    "express": "4.15.2",
+    "express-validator": "3.1.2",
+    "pug": "2.0.0-beta6",
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2"
+  },
+  "author": "Tara Shankar Chakraborty",
+  "license": "ISC"
+}

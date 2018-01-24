@@ -1,0 +1,43 @@
+doctype html
+html
+  head
+    title= `${title}`
+    link(rel='stylesheet' href='../styles/landing.css')
+    link(href="https://fonts.googleapis.com/css?family=Exo:900" rel="stylesheet")
+    link(href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    -let location=JSON.stringify(event.location);
+    script(type='text/javascript').
+      var latLong = !{location}
+    script(type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGlfFHVoOk7p0qh0VUW3UCEvoG2AahKAU")
+    script(src='../script/landing.js')
+  body
+    -let imageUrl= event.imageUrl;
+    -let timeTuple= event.activityTime.activityDateString;
+    -let description = event.description.replace(/[\r\n]/g, '<br/>;');
+    -description = description.replace(/;/g, '');
+    -let summary=event.summary;
+    -let amount=event.amount/100;
+    -let owner=event.ownerName;
+    -let ownerImageUrl=event.ownerProfileImageUrl;
+    .header
+        img(src=imageUrl)
+    .content
+      .banner 
+       .bannerimg
+         img(src=imageUrl)
+       .bannertext
+         p=timeTuple
+         h1=summary
+         p=amount
+         a(target=blank href='') Register
+      .details
+        .desc
+          p!=description
+        .user
+          p!=`Organized by ${owner}`
+          img(src=ownerImageUrl)
+    #map
+    
+    
+

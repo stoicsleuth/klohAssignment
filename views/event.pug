@@ -1,0 +1,47 @@
+doctype html
+html
+  head
+    title= `${title}`
+    link(rel='stylesheet' href='./styles/event.css')
+    link(href="https://fonts.googleapis.com/css?family=Exo:900" rel="stylesheet")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+  body
+    .header
+        h2='Events near Bangalore'
+    .wrapper
+      for result in results
+          //- - let str = result.description.replace(/[\r\n]/g, '<br/>;');
+          //- - str = str.replace(/;/g, '');
+          -console.log(result);
+          -let title= result.title;
+          -let imageUrl= result.imageUrl
+          -let summary=result.summary
+          -let timeTupples=result.activityTime
+          -let activityId=result.activityId
+          -let amount='₹'+result.amount/100;
+          -let location= result.location.locality + ',' +result.location.name
+          -let ownerImageUrl=result.ownerProfileImageUrl
+          //-   .card 
+          //-     .banner
+          //-       img(src=imageUrl)
+          //-     .text
+          //-       .time
+          //-         h4=title
+          //-         h5=summary
+          li.card
+            .img--container
+              img(src=imageUrl)
+              p=amount
+            .card--text
+              .text--container
+                .text--header
+                  h2.text--title=title
+                  p.text--subtitle August 15-18, 2017
+                .text--details
+                  p.text--description=location
+                  img(src=ownerImageUrl)
+                  .a-parent
+                    a.join-button.text--link(href=`./events/${activityId}`) Join
+               
+
+  
