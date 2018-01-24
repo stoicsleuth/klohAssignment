@@ -20,6 +20,7 @@ body{
 }
   
   .card {
+    border-radius: 10px;
     overflow: hidden;
     width: 80%;
     height: 80vw;
@@ -179,5 +180,11 @@ body{
   @media(max-width:400px){
       .text--details img{
           display: none;
+      }
+      .text--header{
+          text-align: center;
+      }
+      .text--title, .text--subtitle{
+          position: initial;
       }
   }
